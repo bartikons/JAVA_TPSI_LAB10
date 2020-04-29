@@ -68,7 +68,6 @@ public class OffersService {
 
     public List<CarModel> getCarModels(int manufacturerId) {
         String jpql = "select cm from CarModel cm where cm.manufacturer.id = :id order by cm.name";
-
         TypedQuery<CarModel> query = em.createQuery(jpql, CarModel.class);
         query.setParameter("id", manufacturerId);
 
@@ -84,7 +83,6 @@ public class OffersService {
 
     public List<Offer> getOffersByModel(int modelId) {
         String jpql = "select cm from Offer cm where cm.model.id = :id order by cm.name";
-
         TypedQuery<Offer> query = em.createQuery(jpql, Offer.class);
         query.setParameter("id", modelId);
 
@@ -92,7 +90,6 @@ public class OffersService {
     }
     public List<Offer> getOffersByManufacturer(int manufacturerId) {
         String jpql = "select cm from Offer cm where cm.manufacturer.id = :id order by cm.name";
-
         TypedQuery<Offer> query = em.createQuery(jpql, Offer.class);
         query.setParameter("id", manufacturerId);
 
