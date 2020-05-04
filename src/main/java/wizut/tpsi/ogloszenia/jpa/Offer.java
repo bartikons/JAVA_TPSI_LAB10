@@ -76,6 +76,7 @@ public class Offer {
     @JoinColumn(name = "fuel_type_id", referencedColumnName = "id")
     @ManyToOne
     private FuelType fuelType;
+    
     public Offer() {
     }
 

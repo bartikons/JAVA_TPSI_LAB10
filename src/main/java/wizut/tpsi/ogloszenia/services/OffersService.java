@@ -33,7 +33,7 @@ public class OffersService {
     public CarModel getCarModel(int id) {
         return em.find(CarModel.class, id);
     }
-    
+
     public Offer getOffer(int id) {
         return em.find(Offer.class, id);
     }
@@ -75,24 +75,31 @@ public class OffersService {
     }
 
     public List<Offer> getOffers() {
-        String jpql = "select cm from Offer cm order by cm.name";
+        String jpql = "select cm from Offer cm order by cm.title";
         TypedQuery<Offer> query = em.createQuery(jpql, Offer.class);
         List<Offer> result = query.getResultList();
         return result;
     }
 
     public List<Offer> getOffersByModel(int modelId) {
-        String jpql = "select cm from Offer cm where cm.model.id = :id order by cm.name";
+        String jpql = "select cm from Offer cm where cm.model.id = :id order by cm.title";
         TypedQuery<Offer> query = em.createQuery(jpql, Offer.class);
         query.setParameter("id", modelId);
 
         return query.getResultList();
     }
+
     public List<Offer> getOffersByManufacturer(int manufacturerId) {
-        String jpql = "select cm from Offer cm where cm.manufacturer.id = :id order by cm.name";
+        String jpql = "select cm from Offer cm where cm.model.manufacturer.id = :id order by cm.title";
         TypedQuery<Offer> query = em.createQuery(jpql, Offer.class);
         query.setParameter("id", manufacturerId);
 
         return query.getResultList();
+
+    }
+
+    public Offer createOffer(Offer offer) {
+        em.persist(offer);
+        return offer;
     }
 }

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout"
+      layout:decorator="layout">
+    <head>
+        <title th:text="${offer.title}">Szczegóły oferty</title>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    </head>
+    <body>
+        <section layout:fragment="content">
+            <h1 th:text="${offer.title}"></h1>
+            <h2>
+                Cena: 
+                <span class="text-primary" th:text="${#numbers.formatDecimal(offer.price, 0, 'WHITESPACE', 0,'COMMA')}"></span>zł
+            </h2>
+
+            <table th:object="${offer}" class="table">
+                <tr>
+                    <th>Marka:</th>
+                    <td th:text="*{model.manufacturer.name}"></td>
+                    <th>Nadwozie:</th>
+                    <td th:text="|*{bodyStyle.name} *{doors}D|"></td>
+                    <th>Rok Produkcji:</th>
+                    <td th:text="*{year}"></td>
+
+                </tr>
+                <tr>
+                    <th>Model:</th>
+                    <td th:text="*{model.name}"></td>
+                    <th>Kolor:</th>
+                    <td th:text="*{colour}"></td>
+                    <th>Pojemność :</th>
+                    <td th:text="*{engineSize}"></td>
+                </tr>
+                <tr>
+                    <th>paliwa</th>
+                    <td th:text="*{fuelType.name}"></td>
+                    <th>Przebieg:</th>
+                    <td >
+                        <span th:text="*{#numbers.formatDecimal(mileage, 0, 'WHITESPACE', 0,'COMMA')} " ></span> km
+                    </td>
+                    <th>Moc silnika:</th>
+                    <td th:text="*{enginePower}"></td>
+                </tr>
+            </table>
+            <div th:text="${offer.description}" class="well">
+            </div>
+        </section>
+    </body>
+</html>
