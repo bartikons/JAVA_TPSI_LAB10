@@ -3,13 +3,15 @@
       xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout"
       layout:decorator="layout">
     <head>
-        <title>Nowe ogłoszenie</title>
+        <title th:text="${header}"></title>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     </head>
     <body>
         <section layout:fragment="content">
-            <form action="/newoffer" method="POST" class="form-horizontal" th:object="${offer}">
+            <h1 th:text="${header}"></h1>
+            <form th:action="${action}" method="POST" th:object="${offer}" class="form-horizontal">
+                <input type="hidden" th:field="*{id}" />
                 <div class="form-group">
                     <label class="col-sm-2 control-label">Tytuł:</label>
                     <div class="col-sm-10" th:classappend="${#fields.hasErrors('*{title}')?'has-error':''}">
@@ -50,7 +52,7 @@
                     <label class="col-sm-2 control-label">Model:</label>
                     <div class="col-sm-10">
                         <select th:field="*{model.id}"  class="form-control">
-                            <option th:each="bs : ${carModels}" th:value="${bs.id}" th:text="|${bs.manufacturer.name} ${bs.name}|"></option>
+                            <option th:each="carModel : ${carModels}" th:value="${carModel.id}" th:text="|${carModel.manufacturer.name} ${carModel.name}|"></option>
                         </select>
                     </div>
                 </div>

@@ -32,20 +32,17 @@ public class HomeController {
     @RequestMapping("/")
     public String home(Model model, OfferFilter offerFilter) {
         List<CarManufacturer> carManufacturers = offersService.getCarManufacturers();
-        List<CarModel> carModels = offersService.getCarModels();
-
-        List<Offer> offers;
-
+        List<CarModel> carModels = null;
         if (offerFilter.getManufacturerId() != null) {
-            offers = offersService.getOffersByManufacturer(offerFilter.getManufacturerId());
-        } else {
-            offers = offersService.getOffers();
+            carModels = offersService.getCarModels(offerFilter.getManufacturerId());
         }
+        List<FuelType> fuelTypes = offersService.getFuelTypes();
+        List<Offer> offers = offersService.getOffers(offerFilter);
 
         model.addAttribute("carManufacturers", carManufacturers);
-        model.addAttribute("carModels", carModels);
         model.addAttribute("offers", offers);
-
+        model.addAttribute("carModels", carModels);
+        model.addAttribute("fuelTypes", fuelTypes);
         return "offersList";
     }
 
@@ -65,23 +62,78 @@ public class HomeController {
         model.addAttribute("carModels", carModels);
         model.addAttribute("bodyStyles", bodyStyles);
         model.addAttribute("fuelTypes", fuelTypes);
+        model.addAttribute("header", "Nowe ogłoszenie");
+        model.addAttribute("action", "/newoffer");
         return "offerForm";
+
     }
+
     @PostMapping("/newoffer")
-public String saveNewOffer(Model model, @Valid Offer offer, BindingResult binding) {
-    if(binding.hasErrors()) {
+    public String saveNewOffer(Model model, @Valid Offer offer, BindingResult binding) {
+        if (binding.hasErrors()) {
+            List<CarModel> carModels = offersService.getCarModels();
+            List<BodyStyle> bodyStyles = offersService.getBodyStyles();
+            List<FuelType> fuelTypes = offersService.getFuelTypes();
+
+            model.addAttribute("carModels", carModels);
+            model.addAttribute("bodyStyles", bodyStyles);
+            model.addAttribute("fuelTypes", fuelTypes);
+
+            return "offerForm";
+        }
+        model.addAttribute("header", "Nowe ogłoszenie");
+        model.addAttribute("action", "/newoffer");
+        offer = offersService.createOffer(offer);
+
+        return "redirect:/offer/" + offer.getId();
+    }
+
+    @GetMapping("/deleteoffer/{id}")
+    public String deleteOffer(Model model, @PathVariable("id") Integer id) {
+        Offer offer = offersService.deleteOffer(id);
+
+        model.addAttribute("offer", offer);
+        return "deleteOffer";
+    }
+
+    @GetMapping("/editoffer/{id}")
+    public String editOffer(Model model, @PathVariable("id") Integer id) {
         List<CarModel> carModels = offersService.getCarModels();
         List<BodyStyle> bodyStyles = offersService.getBodyStyles();
         List<FuelType> fuelTypes = offersService.getFuelTypes();
+        Offer offer = offersService.getOffer(id);
 
         model.addAttribute("carModels", carModels);
         model.addAttribute("bodyStyles", bodyStyles);
         model.addAttribute("fuelTypes", fuelTypes);
-
+        model.addAttribute("header", "Edycja ogłoszenia");
+        model.addAttribute("action", "/editoffer/" + id);
+        model.addAttribute("offer", offer);
         return "offerForm";
     }
-    offer = offersService.createOffer(offer);
 
-    return "redirect:/offer/" + offer.getId();
-}
+    @PostMapping("/editoffer/{id}")
+    public String saveEditedOffer(Model model, @PathVariable("id") Integer id, @Valid Offer offer, BindingResult binding) {
+        if (binding.hasErrors()) {
+            model.addAttribute("header", "Edycja ogłoszenia");
+            model.addAttribute("action", "/editoffer/" + id);
+
+            List<CarModel> carModels = offersService.getCarModels();
+            List<BodyStyle> bodyStyles = offersService.getBodyStyles();
+            List<FuelType> fuelTypes = offersService.getFuelTypes();
+
+            model.addAttribute("carModels", carModels);
+            model.addAttribute("bodyStyles", bodyStyles);
+            model.addAttribute("fuelTypes", fuelTypes);
+            model.addAttribute("header", "Edycja ogłoszenia");
+            model.addAttribute("action", "/editoffer/" + id);
+            model.addAttribute("offer", offer);
+
+            return "offerForm";
+        }
+
+        offersService.saveOffer(offer);
+
+        return "redirect:/offer/" + offer.getId();
+    }
 }

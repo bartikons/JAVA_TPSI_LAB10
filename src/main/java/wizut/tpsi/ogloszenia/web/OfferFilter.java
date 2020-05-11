@@ -12,6 +12,9 @@ package wizut.tpsi.ogloszenia.web;
 public class OfferFilter {
     private Integer manufacturerId;
     private Integer modelId;
+    private Integer fuelId;
+    private Integer fromyear;
+    private Integer toyear;
 
     public Integer getManufacturerId() {
         return manufacturerId;
@@ -27,5 +30,29 @@ public class OfferFilter {
 
     public void setModelId(Integer modelId) {
         this.modelId = modelId;
+    }
+
+    public Integer getFuelId() {
+        return fuelId;
+    }
+
+    public void setFuelId(Integer fuelId) {
+        this.fuelId = fuelId;
+    }
+
+    public Integer getFromyear() {
+        return fromyear;
+    }
+
+    public void setFromyear(Integer fromyear) {
+        this.fromyear = fromyear;
+    }
+
+    public Integer getToyear() {
+        return toyear;
+    }
+
+    public void setToyear(Integer toyear) {
+        this.toyear = toyear;
     }
 }

@@ -16,6 +16,7 @@ import wizut.tpsi.ogloszenia.CarManufacturer;
 import wizut.tpsi.ogloszenia.CarModel;
 import wizut.tpsi.ogloszenia.FuelType;
 import wizut.tpsi.ogloszenia.jpa.Offer;
+import wizut.tpsi.ogloszenia.web.OfferFilter;
 
 /**
  *
@@ -77,7 +78,7 @@ public class OffersService {
     }
 
     public List<Offer> getOffers() {
-        String jpql = "select cm from Offer cm order by cm.title";
+        String jpql = "select cm from Offer cm order by cm.id";
         TypedQuery<Offer> query = em.createQuery(jpql, Offer.class);
         List<Offer> result = query.getResultList();
         return result;
@@ -100,8 +101,66 @@ public class OffersService {
 
     }
 
+    public List<Offer> getOffers(OfferFilter filter) {
+        String jpql = "select cm from Offer cm where 1=1";
+        if (filter.getManufacturerId() != null) {
+            if (filter.getModelId() != null) {
+                jpql = jpql + " AND cm.model.id = :idmodel";
+            } else {
+                jpql = jpql + " AND cm.model.manufacturer.id = :idmanufacturer";
+            }
+        }
+        if (filter.getFuelId() != null) {
+            jpql = jpql + " AND cm.fuelType.id = :idFuel";
+        }
+
+        if (filter.getToyear() != null && filter.getFromyear() != null) {
+            jpql = jpql + " AND cm.year BETWEEN :YEAR1 AND :YEAR2";
+        } else {
+            if (filter.getFromyear() != null) {
+                jpql = jpql + " AND cm.year >= :YEAR1";
+            }
+            if (filter.getToyear() != null) {
+                jpql = jpql + " AND cm.year <= :YEAR2";
+            }
+        }
+        TypedQuery<Offer> query = em.createQuery(jpql, Offer.class);
+        if (filter.getManufacturerId() != null) {
+            if (filter.getModelId() != null) {
+                query.setParameter("idmodel", filter.getModelId());
+            } else {
+                query.setParameter("idmanufacturer", filter.getManufacturerId());
+            }
+        }
+        if (filter.getFuelId() != null) {
+            query.setParameter("idFuel", filter.getFuelId());
+        }
+        if (filter.getToyear() != null && filter.getFromyear() != null) {
+            query.setParameter("YEAR1", filter.getFromyear());
+            query.setParameter("YEAR2", filter.getToyear());
+        } else {
+            if (filter.getFromyear() != null) {
+                query.setParameter("YEAR1", filter.getFromyear());
+            }
+            if (filter.getToyear() != null) {
+                query.setParameter("YEAR2", filter.getToyear());
+            }
+        }
+        return query.getResultList();
+    }
+
     public Offer createOffer(Offer offer) {
         em.persist(offer);
         return offer;
+    }
+
+    public Offer deleteOffer(Integer id) {
+        Offer offer = em.find(Offer.class, id);
+        em.remove(offer);
+        return offer;
+    }
+
+    public Offer saveOffer(Offer offer) {
+        return em.merge(offer);
     }
 }
