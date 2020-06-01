@@ -24,7 +24,6 @@
                     <td th:text="|*{bodyStyle.name} *{doors}D|"></td>
                     <th>Rok Produkcji:</th>
                     <td th:text="*{year}"></td>
-
                 </tr>
                 <tr>
                     <th>Model:</th>
@@ -47,9 +46,9 @@
             </table>
             <div th:text="${offer.description}" class="well">
             </div>
-            <div>
-                <a th:href="|/deleteoffer/${offer.id}|" class="btn btn-danger">Usuń ogłoszenie</a>
-                <a th:href="|/editoffer/${offer.id}|" class="btn btn-primary">Edytuj ogłoszenie</a>
+            <div th:if="${idid==offer.user.id}">
+                <a th:href="|/deleteoffer/${offer.id}|"  class="btn btn-danger">Usuń ogłoszenie</a>
+                <a th:href="|/editoffer/${offer.id}|"  class="btn btn-primary">Edytuj ogłoszenie</a>
             </div>
         </section>
     </body>

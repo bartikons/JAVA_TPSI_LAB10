@@ -5,6 +5,7 @@
  */
 package wizut.tpsi.ogloszenia.jpa;
 
+import wizut.tpsi.ogloszenia.Useruser;
 import java.math.BigDecimal;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -98,7 +99,31 @@ public class Offer {
     @ManyToOne
     private FuelType fuelType;
     
+    @Column(name = "yearofadd")
+    @Min(1900)
+    private Integer yearofadd;
+    
+    @JoinColumn(name = "user_id", referencedColumnName = "id")
+    @ManyToOne
+    private Useruser userUser;
+    
     public Offer() {
+    }
+
+    public Useruser getUser() {
+        return userUser;
+    }
+
+    public void setUser(Useruser user) {
+        this.userUser = user;
+    }
+
+    public Integer getYearofadd() {
+        return yearofadd;
+    }
+
+    public void setYearofadd(Integer yearofadd) {
+        this.yearofadd = yearofadd;
     }
 
     public Integer getId() {

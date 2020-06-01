@@ -12,6 +12,8 @@
         <section layout:fragment="content">
             <div id="offerFilter" class="panel panel-default">
                 <div class="panel-heading">Szukaj ofert</div>
+                <a style ='float:right ; padding: 10px;'th:unless="${idid}" th:text="zaloguj" th:href="login"></a><a style ='float:right ; padding: 10px;'></a>
+                <a style ='float:right ; padding: 10px;'th:if="${idid}" th:text="wyloguj" th:href="logout"></a><a style ='float:right ; padding: 10px;'></a>
                 <div class="panel-body">
                     <form id="offerFilterForm" action="/" method="get" class="form-inline" th:object="${offerFilter}">
                         <select class="form-control" th:field="*{manufacturerId}">
@@ -29,9 +31,52 @@
                         rok:
                         <input type="number" min="1900" class="form-control" th:field="*{fromyear}"/>-
                         <input type="number" min="1900" class="form-control" th:field="*{toyear}"/>
+                        opis:
+                        <input type="text" class="form-control" th:field="*{description}"/>
 
+                        <input hidden="hidden" type="number" th:field="*{page}" th:value="0" />
                         <input type="submit" value="Filtruj" class="form-control"/>
                     </form>
+
+                    <form action="/" method="get" th:object="${offerFilter}" th:if="${page != 0}" style ='float: left; padding: 5px;'>
+                        <input hidden="hidden" type="text" th:field="*{manufacturerId}" th:value="${manufacturerId}" />
+                        <input hidden="hidden" type="text" th:field="*{modelId}" th:value="${modelId}" />
+                        <input hidden="hidden" type="text" th:field="*{fuelId}" th:value="${fuelId}" />
+                        <input hidden="hidden" type="number" th:field="*{fromyear}" th:value="${fromyear}" />
+                        <input hidden="hidden" type="number" th:field="*{toyear}" th:value="${toyear}" />
+                        <input hidden="hidden" type="number" th:value="${page-1}" name="page" id="page"/>
+                        <input type="submit" th:value="|Poprzednia Strona|" />
+                    </form>
+                    <span style ='float: left; padding: 5px; ' th:if='${page>2}' th:text='...'></span>
+                    <!--<a th:each="i,iter : ${#numbers.sequence(0, maxpage)}" th:text="${i+1}" style ='float: left; padding: 5px;' th:if='${page-2<i || page+2<i}' th:href="|?manufacturerId=${manufacturerId}&modelId=${modelId}&fuelId=${fuelId}&fromyear=${fromyear}&toyear=${toyear}&page=${i}}|"></a>-->
+                    <span style ='float: left; padding: 5px;' th:if='${page<maxpage-2}' th:text='...'>... </span>
+                    <form action="/" method="get" th:object="${offerFilter}" th:if="${page != maxpage }"style ='float: left; padding: 5px;'>
+                        <input hidden="hidden" type="text" th:field="*{manufacturerId}" th:value="${manufacturerId}" />
+                        <input hidden="hidden" type="text" th:field="*{modelId}" th:value="${modelId}" />
+                        <input hidden="hidden" type="text" th:field="*{fuelId}" th:value="${fuelId}" />
+                        <input hidden="hidden" type="number" th:field="*{fromyear}" th:value="${fromyear}" />
+                        <input hidden="hidden" type="number" th:field="*{toyear}" th:value="${toyear}" />
+                        <input hidden="hidden" type="number" th:value="|${page+1}|" name="page" id="page" />
+                        <input type="submit" th:value="|Nastepna strona|" />
+                    </form>
+                    <form form action="/" method="get" th:object="${offerFilter}" style ='float:right ; padding: 10px;'>
+                        <input hidden="hidden" type="text" th:field="*{manufacturerId}" th:value="${manufacturerId}" />
+                        <input hidden="hidden" type="text" th:field="*{modelId}" th:value="${modelId}" />
+                        <input hidden="hidden" type="text" th:field="*{fuelId}" th:value="${fuelId}" />
+                        <input hidden="hidden" type="number" th:field="*{fromyear}" th:value="${fromyear}" />
+                        <input hidden="hidden" type="number" th:field="*{toyear}" th:value="${toyear}" />
+                        <input hidden="hidden" type="number" th:value="|${page}|" name="page" id="page" />
+                        <select class="form-control" th:field="*{sorte}">
+                            <option th:value="default" th:text="domyślnie"></option>
+                            <option th:value="price_up" th:text="|Cena rosnąco|"></option>
+                            <option th:value="price_down" th:text="|Cena Malejąco|"></option>
+                            <option th:value="proyear_down" th:text="|Od najmłodszych aut|"></option>
+                            <option th:value="proyear_up" th:text="|Od najstarszych aut|"></option>
+                            <option th:value="addyear_up" th:text="|Od najowszych ogłoszeń|"></option>
+                            <option th:value="addyear_down" th:text="|Od najstarszych ogłoszeń|"></option>
+                        </select>
+                        <input type="submit" th:value="Sortuj" />
+                    </form> 
                 </div>
             </div>
             <table class="table">
@@ -49,11 +94,13 @@
                     <td th:text="${offer.model.manufacturer.name}"></td>
                     <td th:text="${offer.model.name}"></td>
                     <td th:text="${offer.year}"></td>
+                    <td th:text="${offer.yearofadd}"></td>
                     <td class="text-right">
                         <span th:text="${#numbers.formatDecimal(offer.price, 0, 'WHITESPACE', 0,'COMMA')}"></span>zł
                     </td>
                 </tr>
             </table>
+            <form></form>
         </section>
     </body>
 </html>

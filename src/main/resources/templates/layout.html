@@ -16,8 +16,11 @@
                 <img src="https://upload.wikimedia.org/wikipedia/commons/2/23/BlondeWomanDrivingCar.svg" style="float: right" height="86pt"/>
 
                 <h1>Furka4U <small>Najlepsze furki w necie</small></h1>
-                <h4>
-                <a href="/">Przeglądaj ogłoszenia</a> | <a href="/newoffer">Dodaj ogłoszenie</a>
+                <h4 th:if="${idid}">
+                <a href="/">Przeglądaj ogłoszenia</a> | <a href="/newoffer"  >Dodaj ogłoszenie</a>
+                </h4>
+                <h4 th:unless="${idid}">
+                <a href="/">Przeglądaj ogłoszenia</a> 
                 </h4>
             </div>
 

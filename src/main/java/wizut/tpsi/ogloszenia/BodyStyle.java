@@ -19,7 +19,7 @@ import javax.validation.constraints.Size;
 @Entity
 @Table(name = "body_style")
 public class BodyStyle {
-        @Id
+    @Id
     @GeneratedValue
     @Column(name = "id")
     private Integer id;
