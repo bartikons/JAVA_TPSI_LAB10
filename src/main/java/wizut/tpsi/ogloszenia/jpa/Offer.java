@@ -56,6 +56,7 @@ public class Offer {
 
     @Column(name = "engine_size")
     @Min(0)
+    @Max(99)
     private BigDecimal engineSize;
 
     @Column(name = "engine_power")

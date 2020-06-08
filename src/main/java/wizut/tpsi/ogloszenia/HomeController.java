@@ -25,16 +25,16 @@ import wizut.tpsi.ogloszenia.jpa.Offer;
 import wizut.tpsi.ogloszenia.services.OffersService;
 import wizut.tpsi.ogloszenia.web.OfferFilter;
 
-
 /**
  *
  * @author naeri
  */
 @Controller
 public class HomeController {
+
     @Autowired
     private OffersService offersService;
-    
+
     @Autowired
     private Currentlog Currentlog;
 
@@ -44,17 +44,16 @@ public class HomeController {
         if (offerFilter.getSorte() == null) {
             offerFilter.setSorte("default");
         }
-        
+
         String sorter = offerFilter.getSorte();
         Integer page = 0;
-        
+
         if (offerFilter.getPage() != null) {
             page = offerFilter.getPage();
-        } 
-        else {  
+        } else {
             offerFilter.setPage(0);
         }
-        
+
         List<CarManufacturer> carManufacturers = offersService.getCarManufacturers();
         List<CarModel> carModels = null;
 
@@ -85,7 +84,7 @@ public class HomeController {
 
     @GetMapping("/newoffer")
     public String newOfferForm(Model model, Offer offer) {
-        
+
         model.addAttribute("idid", Currentlog.getId());
         List<CarModel> carModels = offersService.getCarModels();
         List<BodyStyle> bodyStyles = offersService.getBodyStyles();
@@ -95,14 +94,16 @@ public class HomeController {
         model.addAttribute("fuelTypes", fuelTypes);
         model.addAttribute("header", "Nowe ogłoszenie");
         model.addAttribute("action", "/newoffer");
-        
+
         return "offerForm";
 
     }
 
     @PostMapping("/newoffer")
     public String saveNewOffer(Model model, @Valid Offer offer, BindingResult binding) {
-        if(Currentlog.getId()==null)   return "redirect:/";
+        if (Currentlog.getId() == null) {
+            return "redirect:/";
+        }
         model.addAttribute("idid", Currentlog.getId());
         if (binding.hasErrors()) {
             List<CarModel> carModels = offersService.getCarModels();
@@ -113,24 +114,11 @@ public class HomeController {
             model.addAttribute("fuelTypes", fuelTypes);
             model.addAttribute("header", "Nowe ogłoszenie");
             model.addAttribute("action", "/newoffer");
-            
-            for (Object object : binding.getAllErrors()) {
-    if(object instanceof FieldError) {
-        FieldError fieldError = (FieldError) object;
 
-        System.out.println(fieldError.getCode());
-    }
-
-    if(object instanceof ObjectError) {
-        ObjectError objectError = (ObjectError) object;
-
-        System.out.println(objectError.getCode());
-    }
-}
             return "offerForm";
         }
-        
-        offer.setUser(offersService.getUseruser( Currentlog.getId()));
+
+        offer.setUser(offersService.getUseruser(Currentlog.getId()));
         offer = offersService.createOffer(offer);
 
         return "redirect:/offer/" + offer.getId();
@@ -139,31 +127,34 @@ public class HomeController {
     @GetMapping("/deleteoffer/{id}")
     public String deleteOffer(Model model, @PathVariable("id") Integer id) {
         try {
-        if(!Objects.equals(offersService.getOffer(id).getUser().getId(), Currentlog.getId())) return "redirect:/";
-        
-        
+            if (!Objects.equals(offersService.getOffer(id).getUser().getId(), Currentlog.getId())) {
+                return "redirect:/";
+            }
+
         } catch (Exception e) {
         }
         Offer offer = offersService.deleteOffer(id);
-        model.addAttribute("idid",Currentlog.getId());
+        model.addAttribute("idid", Currentlog.getId());
         model.addAttribute("offer", offer);
         return "deleteOffer";
     }
 
     @GetMapping("/editoffer/{id}")
     public String editOffer(Model model, @PathVariable("id") Integer id) {
-        
+
         model.addAttribute("idid", Currentlog.getId());
         List<CarModel> carModels = offersService.getCarModels();
         List<BodyStyle> bodyStyles = offersService.getBodyStyles();
         List<FuelType> fuelTypes = offersService.getFuelTypes();
         Offer offer = offersService.getOffer(id);
         try {
-            
-        if(!Objects.equals(Currentlog.getId(), offer.getUser().getId())) return "redirect:/";
+
+            if (!Objects.equals(Currentlog.getId(), offer.getUser().getId())) {
+                return "redirect:/";
+            }
         } catch (Exception e) {
         }
-        
+
         model.addAttribute("carModels", carModels);
         model.addAttribute("bodyStyles", bodyStyles);
         model.addAttribute("fuelTypes", fuelTypes);
@@ -180,7 +171,7 @@ public class HomeController {
             List<BodyStyle> bodyStyles = offersService.getBodyStyles();
             List<FuelType> fuelTypes = offersService.getFuelTypes();
 
-            model.addAttribute("idid",Currentlog.getId());
+            model.addAttribute("idid", Currentlog.getId());
             model.addAttribute("carModels", carModels);
             model.addAttribute("bodyStyles", bodyStyles);
             model.addAttribute("fuelTypes", fuelTypes);
