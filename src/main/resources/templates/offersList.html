@@ -45,6 +45,7 @@
                         <input hidden="hidden" type="number" th:field="*{fromyear}" th:value="${fromyear}" />
                         <input hidden="hidden" type="number" th:field="*{toyear}" th:value="${toyear}" />
                         <input hidden="hidden" type="number" th:value="${page-1}" name="page" id="page"/>
+                        <input hidden="hidden" type="text" th:field="*{sorte}" />
                         <input type="submit" th:value="|Poprzednia Strona|" />
                     </form>
                     <span style ='float: left; padding: 5px; ' th:if='${page>2}' th:text='...'></span>
@@ -57,6 +58,7 @@
                         <input hidden="hidden" type="number" th:field="*{fromyear}" th:value="${fromyear}" />
                         <input hidden="hidden" type="number" th:field="*{toyear}" th:value="${toyear}" />
                         <input hidden="hidden" type="number" th:value="|${page+1}|" name="page" id="page" />
+                        <input hidden="hidden" type="text" th:field="*{sorte}" />
                         <input type="submit" th:value="|Nastepna strona|" />
                     </form>
                     <form form action="/" method="get" th:object="${offerFilter}" style ='float:right ; padding: 10px;'>

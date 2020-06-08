@@ -41,4 +41,139 @@ insert into offer(title, model_id, body_style_id, fuel_type_id, year, mileage, e
 'W komplecie dresy Adidas, kij bejzbolowy i alibi na najbliższy weekend.', 1750, 3,20161010),
 (
 'Honda Jazz zadbana', 34, 1, 2, 2012, 17000, 1.2, 90, 3, 'błękitny',
+'Niemiecki dziadek jeździł do kościoła i na działkę. Niepalona, niebita, serwisowana w ASO.', 22500, 2,20151010),
+(
+'Nissan Bluebird', 13, 2, 2, 1988, 352000, 2.0, 75, 4, 'biały',
+'Zadbany klasyk, dla koneserów. Klimatyzacja automatyczna, komputer pokładowy, nawigacja satelitarna, podgrzewane siedzenia, system kontroli trakcji - tych ani żadnych innych zbędnych bzdetów to auto nie posiada.', 2500, 1,20201010),
+(
+'BMW 316 aka Dresowóz Klasyk', 59, 2, 1, 1991, 452000, 1.8, 110, 4, 'czarny',
+'W komplecie dresy Adidas, kij bejzbolowy i alibi na najbliższy weekend.', 1750, 3,20161010),
+(
+'Honda Jazz zadbana', 34, 1, 2, 2012, 17000, 1.2, 90, 3, 'błękitny',
+'Niemiecki dziadek jeździł do kościoła i na działkę. Niepalona, niebita, serwisowana w ASO.', 22500, 2,20151010),
+(
+'Nissan Bluebird', 13, 2, 2, 1988, 352000, 2.0, 75, 4, 'biały',
+'Zadbany klasyk, dla koneserów. Klimatyzacja automatyczna, komputer pokładowy, nawigacja satelitarna, podgrzewane siedzenia, system kontroli trakcji - tych ani żadnych innych zbędnych bzdetów to auto nie posiada.', 2500, 1,20201010),
+(
+'BMW 316 aka Dresowóz Klasyk', 59, 2, 1, 1991, 452000, 1.8, 110, 4, 'czarny',
+'W komplecie dresy Adidas, kij bejzbolowy i alibi na najbliższy weekend.', 1750, 3,20161010),
+(
+'Honda Jazz zadbana', 34, 1, 2, 2012, 17000, 1.2, 90, 3, 'błękitny',
+'Niemiecki dziadek jeździł do kościoła i na działkę. Niepalona, niebita, serwisowana w ASO.', 22500, 2,20151010),
+(
+'Nissan Bluebird', 13, 2, 2, 1988, 352000, 2.0, 75, 4, 'biały',
+'Zadbany klasyk, dla koneserów. Klimatyzacja automatyczna, komputer pokładowy, nawigacja satelitarna, podgrzewane siedzenia, system kontroli trakcji - tych ani żadnych innych zbędnych bzdetów to auto nie posiada.', 2500, 1,20201010),
+(
+'BMW 316 aka Dresowóz Klasyk', 59, 2, 1, 1991, 452000, 1.8, 110, 4, 'czarny',
+'W komplecie dresy Adidas, kij bejzbolowy i alibi na najbliższy weekend.', 1750, 3,20161010),
+(
+'Honda Jazz zadbana', 34, 1, 2, 2012, 17000, 1.2, 90, 3, 'błękitny',
+'Niemiecki dziadek jeździł do kościoła i na działkę. Niepalona, niebita, serwisowana w ASO.', 22500, 2,20151010),
+(
+'Nissan Bluebird', 13, 2, 2, 1988, 352000, 2.0, 75, 4, 'biały',
+'Zadbany klasyk, dla koneserów. Klimatyzacja automatyczna, komputer pokładowy, nawigacja satelitarna, podgrzewane siedzenia, system kontroli trakcji - tych ani żadnych innych zbędnych bzdetów to auto nie posiada.', 2500, 1,20201010),
+(
+'BMW 316 aka Dresowóz Klasyk', 59, 2, 1, 1991, 452000, 1.8, 110, 4, 'czarny',
+'W komplecie dresy Adidas, kij bejzbolowy i alibi na najbliższy weekend.', 1750, 3,20161010),
+(
+'Honda Jazz zadbana', 34, 1, 2, 2012, 17000, 1.2, 90, 3, 'błękitny',
+'Niemiecki dziadek jeździł do kościoła i na działkę. Niepalona, niebita, serwisowana w ASO.', 22500, 2,20151010),
+(
+'Nissan Bluebird', 13, 2, 2, 1988, 352000, 2.0, 75, 4, 'biały',
+'Zadbany klasyk, dla koneserów. Klimatyzacja automatyczna, komputer pokładowy, nawigacja satelitarna, podgrzewane siedzenia, system kontroli trakcji - tych ani żadnych innych zbędnych bzdetów to auto nie posiada.', 2500, 1,20201010),
+(
+'BMW 316 aka Dresowóz Klasyk', 59, 2, 1, 1991, 452000, 1.8, 110, 4, 'czarny',
+'W komplecie dresy Adidas, kij bejzbolowy i alibi na najbliższy weekend.', 1750, 3,20161010),
+(
+'Honda Jazz zadbana', 34, 1, 2, 2012, 17000, 1.2, 90, 3, 'błękitny',
+'Niemiecki dziadek jeździł do kościoła i na działkę. Niepalona, niebita, serwisowana w ASO.', 22500, 2,20151010),
+(
+'Nissan Bluebird', 13, 2, 2, 1988, 352000, 2.0, 75, 4, 'biały',
+'Zadbany klasyk, dla koneserów. Klimatyzacja automatyczna, komputer pokładowy, nawigacja satelitarna, podgrzewane siedzenia, system kontroli trakcji - tych ani żadnych innych zbędnych bzdetów to auto nie posiada.', 2500, 1,20201010),
+(
+'BMW 316 aka Dresowóz Klasyk', 59, 2, 1, 1991, 452000, 1.8, 110, 4, 'czarny',
+'W komplecie dresy Adidas, kij bejzbolowy i alibi na najbliższy weekend.', 1750, 3,20161010),
+(
+'Honda Jazz zadbana', 34, 1, 2, 2012, 17000, 1.2, 90, 3, 'błękitny',
+'Niemiecki dziadek jeździł do kościoła i na działkę. Niepalona, niebita, serwisowana w ASO.', 22500, 2,20151010),
+(
+'Nissan Bluebird', 13, 2, 2, 1988, 352000, 2.0, 75, 4, 'biały',
+'Zadbany klasyk, dla koneserów. Klimatyzacja automatyczna, komputer pokładowy, nawigacja satelitarna, podgrzewane siedzenia, system kontroli trakcji - tych ani żadnych innych zbędnych bzdetów to auto nie posiada.', 2500, 1,20201010),
+(
+'BMW 316 aka Dresowóz Klasyk', 59, 2, 1, 1991, 452000, 1.8, 110, 4, 'czarny',
+'W komplecie dresy Adidas, kij bejzbolowy i alibi na najbliższy weekend.', 1750, 3,20161010),
+(
+'Honda Jazz zadbana', 34, 1, 2, 2012, 17000, 1.2, 90, 3, 'błękitny',
+'Niemiecki dziadek jeździł do kościoła i na działkę. Niepalona, niebita, serwisowana w ASO.', 22500, 2,20151010),
+(
+'Nissan Bluebird', 13, 2, 2, 1988, 352000, 2.0, 75, 4, 'biały',
+'Zadbany klasyk, dla koneserów. Klimatyzacja automatyczna, komputer pokładowy, nawigacja satelitarna, podgrzewane siedzenia, system kontroli trakcji - tych ani żadnych innych zbędnych bzdetów to auto nie posiada.', 2500, 1,20201010),
+(
+'BMW 316 aka Dresowóz Klasyk', 59, 2, 1, 1991, 452000, 1.8, 110, 4, 'czarny',
+'W komplecie dresy Adidas, kij bejzbolowy i alibi na najbliższy weekend.', 1750, 3,20161010),
+(
+'Honda Jazz zadbana', 34, 1, 2, 2012, 17000, 1.2, 90, 3, 'błękitny',
+'Niemiecki dziadek jeździł do kościoła i na działkę. Niepalona, niebita, serwisowana w ASO.', 22500, 2,20151010),
+(
+'Nissan Bluebird', 13, 2, 2, 1988, 352000, 2.0, 75, 4, 'biały',
+'Zadbany klasyk, dla koneserów. Klimatyzacja automatyczna, komputer pokładowy, nawigacja satelitarna, podgrzewane siedzenia, system kontroli trakcji - tych ani żadnych innych zbędnych bzdetów to auto nie posiada.', 2500, 1,20201010),
+(
+'BMW 316 aka Dresowóz Klasyk', 59, 2, 1, 1991, 452000, 1.8, 110, 4, 'czarny',
+'W komplecie dresy Adidas, kij bejzbolowy i alibi na najbliższy weekend.', 1750, 3,20161010),
+(
+'Honda Jazz zadbana', 34, 1, 2, 2012, 17000, 1.2, 90, 3, 'błękitny',
+'Niemiecki dziadek jeździł do kościoła i na działkę. Niepalona, niebita, serwisowana w ASO.', 22500, 2,20151010),
+(
+'Nissan Bluebird', 13, 2, 2, 1988, 352000, 2.0, 75, 4, 'biały',
+'Zadbany klasyk, dla koneserów. Klimatyzacja automatyczna, komputer pokładowy, nawigacja satelitarna, podgrzewane siedzenia, system kontroli trakcji - tych ani żadnych innych zbędnych bzdetów to auto nie posiada.', 2500, 1,20201010),
+(
+'BMW 316 aka Dresowóz Klasyk', 59, 2, 1, 1991, 452000, 1.8, 110, 4, 'czarny',
+'W komplecie dresy Adidas, kij bejzbolowy i alibi na najbliższy weekend.', 1750, 3,20161010),
+(
+'Honda Jazz zadbana', 34, 1, 2, 2012, 17000, 1.2, 90, 3, 'błękitny',
+'Niemiecki dziadek jeździł do kościoła i na działkę. Niepalona, niebita, serwisowana w ASO.', 22500, 2,20151010),
+(
+'Nissan Bluebird', 13, 2, 2, 1988, 352000, 2.0, 75, 4, 'biały',
+'Zadbany klasyk, dla koneserów. Klimatyzacja automatyczna, komputer pokładowy, nawigacja satelitarna, podgrzewane siedzenia, system kontroli trakcji - tych ani żadnych innych zbędnych bzdetów to auto nie posiada.', 2500, 1,20201010),
+(
+'BMW 316 aka Dresowóz Klasyk', 59, 2, 1, 1991, 452000, 1.8, 110, 4, 'czarny',
+'W komplecie dresy Adidas, kij bejzbolowy i alibi na najbliższy weekend.', 1750, 3,20161010),
+(
+'Honda Jazz zadbana', 34, 1, 2, 2012, 17000, 1.2, 90, 3, 'błękitny',
+'Niemiecki dziadek jeździł do kościoła i na działkę. Niepalona, niebita, serwisowana w ASO.', 22500, 2,20151010),
+(
+'Nissan Bluebird', 13, 2, 2, 1988, 352000, 2.0, 75, 4, 'biały',
+'Zadbany klasyk, dla koneserów. Klimatyzacja automatyczna, komputer pokładowy, nawigacja satelitarna, podgrzewane siedzenia, system kontroli trakcji - tych ani żadnych innych zbędnych bzdetów to auto nie posiada.', 2500, 1,20201010),
+(
+'BMW 316 aka Dresowóz Klasyk', 59, 2, 1, 1991, 452000, 1.8, 110, 4, 'czarny',
+'W komplecie dresy Adidas, kij bejzbolowy i alibi na najbliższy weekend.', 1750, 3,20161010),
+(
+'Honda Jazz zadbana', 34, 1, 2, 2012, 17000, 1.2, 90, 3, 'błękitny',
+'Niemiecki dziadek jeździł do kościoła i na działkę. Niepalona, niebita, serwisowana w ASO.', 22500, 2,20151010),
+(
+'Nissan Bluebird', 13, 2, 2, 1988, 352000, 2.0, 75, 4, 'biały',
+'Zadbany klasyk, dla koneserów. Klimatyzacja automatyczna, komputer pokładowy, nawigacja satelitarna, podgrzewane siedzenia, system kontroli trakcji - tych ani żadnych innych zbędnych bzdetów to auto nie posiada.', 2500, 1,20201010),
+(
+'BMW 316 aka Dresowóz Klasyk', 59, 2, 1, 1991, 452000, 1.8, 110, 4, 'czarny',
+'W komplecie dresy Adidas, kij bejzbolowy i alibi na najbliższy weekend.', 1750, 3,20161010),
+(
+'Honda Jazz zadbana', 34, 1, 2, 2012, 17000, 1.2, 90, 3, 'błękitny',
+'Niemiecki dziadek jeździł do kościoła i na działkę. Niepalona, niebita, serwisowana w ASO.', 22500, 2,20151010),
+(
+'Nissan Bluebird', 13, 2, 2, 1988, 352000, 2.0, 75, 4, 'biały',
+'Zadbany klasyk, dla koneserów. Klimatyzacja automatyczna, komputer pokładowy, nawigacja satelitarna, podgrzewane siedzenia, system kontroli trakcji - tych ani żadnych innych zbędnych bzdetów to auto nie posiada.', 2500, 1,20201010),
+(
+'BMW 316 aka Dresowóz Klasyk', 59, 2, 1, 1991, 452000, 1.8, 110, 4, 'czarny',
+'W komplecie dresy Adidas, kij bejzbolowy i alibi na najbliższy weekend.', 1750, 3,20161010),
+(
+'Honda Jazz zadbana', 34, 1, 2, 2012, 17000, 1.2, 90, 3, 'błękitny',
+'Niemiecki dziadek jeździł do kościoła i na działkę. Niepalona, niebita, serwisowana w ASO.', 22500, 2,20151010),
+(
+'Nissan Bluebird', 13, 2, 2, 1988, 352000, 2.0, 75, 4, 'biały',
+'Zadbany klasyk, dla koneserów. Klimatyzacja automatyczna, komputer pokładowy, nawigacja satelitarna, podgrzewane siedzenia, system kontroli trakcji - tych ani żadnych innych zbędnych bzdetów to auto nie posiada.', 2500, 1,20201010),
+(
+'BMW 316 aka Dresowóz Klasyk', 59, 2, 1, 1991, 452000, 1.8, 110, 4, 'czarny',
+'W komplecie dresy Adidas, kij bejzbolowy i alibi na najbliższy weekend.', 1750, 3,20161010),
+(
+'Honda Jazz zadbana', 34, 1, 2, 2012, 17000, 1.2, 90, 3, 'błękitny',
 'Niemiecki dziadek jeździł do kościoła i na działkę. Niepalona, niebita, serwisowana w ASO.', 22500, 2,20151010);

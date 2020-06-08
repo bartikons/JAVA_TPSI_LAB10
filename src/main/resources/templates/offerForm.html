@@ -13,8 +13,8 @@
             <form th:action="${action}" method="POST" th:object="${offer}" class="form-horizontal">
                 <div class="form-group">
                     
-                    <input hidden="hidden" type="text" th:field="*{id}" class="form-control"/>
-                    <input hidden="hidden" type="text" th:field="*{yearofadd}" class="form-control"/>
+                    <input hidden="hidden" type="text" th:field="*{id}" />
+                    <input hidden="hidden" type="text" th:field="*{yearofadd}" />
                     <label class="col-sm-2 control-label">Tytuł:</label>
                     <div class="col-sm-10" th:classappend="${#fields.hasErrors('*{title}')?'has-error':''}">
                         <input type="text" th:field="*{title}" class="form-control"/>
